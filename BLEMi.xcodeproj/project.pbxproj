@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E033A3D234197490018210B /* MPDBluetoothManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E033A3C234197480018210B /* MPDBluetoothManager.mm */; };
 		7E39BF5B22FBC75B00703F1E /* HiseeClassFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39BF5922FBC75B00703F1E /* HiseeClassFormat.m */; };
 		7E39BF5E22FBCC7100703F1E /* HiseeBtDeviceBP88A.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39BF5D22FBCC7100703F1E /* HiseeBtDeviceBP88A.m */; };
 		7E39BF6122FBCCAC00703F1E /* HiseeBaseBtDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39BF6022FBCCAC00703F1E /* HiseeBaseBtDevice.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E033A3B234197480018210B /* MPDBluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDBluetoothManager.h; sourceTree = "<group>"; };
+		7E033A3C234197480018210B /* MPDBluetoothManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPDBluetoothManager.mm; sourceTree = "<group>"; };
 		7E39BF5922FBC75B00703F1E /* HiseeClassFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiseeClassFormat.m; sourceTree = "<group>"; };
 		7E39BF5A22FBC75B00703F1E /* HiseeClassFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiseeClassFormat.h; sourceTree = "<group>"; };
 		7E39BF5C22FBCC7100703F1E /* HiseeBtDeviceBP88A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiseeBtDeviceBP88A.h; sourceTree = "<group>"; };
@@ -57,6 +60,8 @@
 		7E0336EF233E0A8F0018210B /* PRB */ = {
 			isa = PBXGroup;
 			children = (
+				7E033A3B234197480018210B /* MPDBluetoothManager.h */,
+				7E033A3C234197480018210B /* MPDBluetoothManager.mm */,
 				7E39BF5A22FBC75B00703F1E /* HiseeClassFormat.h */,
 				7E39BF5922FBC75B00703F1E /* HiseeClassFormat.m */,
 				7E39BF5F22FBCCAC00703F1E /* HiseeBaseBtDevice.h */,
@@ -93,8 +98,8 @@
 				DC6B6EBE1C904B7900D07643 /* AppDelegate.m */,
 				DC6B6EC01C904B7900D07643 /* ViewController.h */,
 				DC6B6EC11C904B7900D07643 /* ViewController.m */,
-				7E0336EF233E0A8F0018210B /* PRB */,
 				DC6B6EC31C904B7A00D07643 /* Main.storyboard */,
+				7E0336EF233E0A8F0018210B /* PRB */,
 				DC6B6EC61C904B7A00D07643 /* Assets.xcassets */,
 				DC6B6EC81C904B7A00D07643 /* LaunchScreen.storyboard */,
 				DC6B6ECB1C904B7A00D07643 /* Info.plist */,
@@ -183,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E033A3D234197490018210B /* MPDBluetoothManager.mm in Sources */,
 				DC6B6EC21C904B7900D07643 /* ViewController.m in Sources */,
 				7E39BF6122FBCCAC00703F1E /* HiseeBaseBtDevice.m in Sources */,
 				7E39BF6422FBD7AE00703F1E /* HiseeBtDeviceRBP9804.m in Sources */,

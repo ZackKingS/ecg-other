@@ -92,6 +92,13 @@
 @property (nonatomic) NSMutableArray *median;
 @property (nonatomic) NSMutableDictionary *paramBuffer;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *heartLabel;
+@property (weak, nonatomic) IBOutlet UILabel *batteryLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *connectLabel;
+
+
 @end
 
 @implementation ViewController
@@ -308,14 +315,9 @@
             
 //            NSLog(@"data : %@",characteristic.value);
             
-            
             for (i =0; i<receiveLength ;i++)
             {
-                //                NSLog(@"receiveLength:%ld",receiveLength);
-                //                NSLog(@"data[i]:%c",(char)data[i]);
-                //                NSLog(@"self.packetData length:%ld",[self.packetData length]);
-                //                NSLog(@"self.packetLength:%ld",_packetLength);
-                //                NSLog(@"self.isPacketStart:%ld",self.isPacketStart);
+            
                 if (data[i] == 0x53 && self.isPacketStart == 0) {
                     if (self.previousData == 0x50 || self.isFirstPacket)
                     {
@@ -332,7 +334,6 @@
                 else if (data[i] != 0x50 && self.isPacketStart == 2 && [self.packetData length] == self.packetLength + 1){
                     NSLog(NSLocalizedString(@"协议错误",nil));
                     self.isPacketStart = 0;
-                    
                 }
                 else if (data[i] == 0x50 && self.isPacketStart == 2 && [self.packetData length] == self.packetLength + 1){
                     self.isPacketStart = 0;
@@ -344,7 +345,7 @@
                         NSMutableArray *arr = [NSMutableArray array];
                         for (j = 1;j < _packetLength; j += 2)
                         {
-                            UInt16 ecg = ((char)(payLoad0[j])<<8) +payLoad0[j+1];
+                            UInt16 ecg = ((char)(payLoad0[j]) << 8) +payLoad0[j+1];
                             self.ECG = ecg;
                             [arr addObject:@(ecg)];
                             //                            if([self.delegate respondsToSelector:@selector(ecgValuesUpdated:)])
@@ -388,7 +389,9 @@
                         // Heart packet
                         UInt16 hr = payLoad0[1]+payLoad0[2]*256;
                         
-                        NSLog(@"Heart-------%d",hr);
+//                        NSLog(@"Heart-------%d",hr);
+                        
+                        self.heartLabel.text = [NSString stringWithFormat:@"心跳: %d",hr];
                         
                         self.HR = hr;
 //                        if([self.delegate respondsToSelector:@selector(hrValuesUpdated:)])
@@ -400,7 +403,9 @@
                         // Battery
                         UInt16 battery = payLoad0[1]+payLoad0[2]*256;
                         
-                        NSLog(@"battery-------%d",battery);
+//                        NSLog(@"battery-------%d",battery);
+                        
+                        self.batteryLabel.text = [NSString stringWithFormat:@"电量: %d",battery];
                         
                         //
                         //                        self.batteryLevel = battery;
@@ -412,8 +417,9 @@
                         // Connection
                         UInt16 connection = payLoad0[1]+payLoad0[2]*256;
                         
-                        NSLog(@"connection-------%d",connection);
+//                        NSLog(@"connection-------%d",connection);
                         
+                        self.connectLabel.text = [NSString stringWithFormat:@"连接状态: %d",connection];
 //                        if([self.delegate respondsToSelector:@selector(connectionValuesUpdated:)])
 //                        {
 //                            [[self delegate] connectionValuesUpdated:connection];

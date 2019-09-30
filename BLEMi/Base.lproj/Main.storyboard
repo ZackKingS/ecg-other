@@ -60,11 +60,35 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph9-0c-DLX">
-                                <rect key="frame" x="40" y="278" width="334" height="493"/>
+                                <rect key="frame" x="40" y="278" width="334" height="80"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="OKE-C8-3EJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="心跳：___" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1a-f8-Keh">
+                                <rect key="frame" x="95" y="438" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="电量：___" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU3-cd-LUX">
+                                <rect key="frame" x="95" y="493" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="连接状态：___" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnE-K4-t7X">
+                                <rect key="frame" x="96" y="554" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -79,7 +103,6 @@
                             <constraint firstAttribute="trailing" secondItem="Eof-sJ-jPG" secondAttribute="trailing" constant="40" id="M4c-tb-w8c"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MZ9-vE-Jjc" secondAttribute="bottom" constant="8" id="QOS-AP-PxK"/>
                             <constraint firstItem="Eof-sJ-jPG" firstAttribute="top" secondItem="gd9-2Q-vpy" secondAttribute="bottom" constant="15" id="V91-T4-o0B"/>
-                            <constraint firstItem="MZ9-vE-Jjc" firstAttribute="top" secondItem="Ph9-0c-DLX" secondAttribute="bottom" constant="33" id="YQ3-wg-bE4"/>
                             <constraint firstItem="UQB-01-tiZ" firstAttribute="top" secondItem="Eof-sJ-jPG" secondAttribute="bottom" constant="15" id="f9D-Wk-zS4"/>
                             <constraint firstAttribute="trailing" secondItem="MZ9-vE-Jjc" secondAttribute="trailing" constant="20" id="iJX-zl-w6k"/>
                             <constraint firstAttribute="trailing" secondItem="UQB-01-tiZ" secondAttribute="trailing" constant="40" id="lKY-vo-JbB"/>
@@ -88,7 +111,10 @@
                     <navigationItem key="navigationItem" title="BLE" id="7cH-Ev-Jx9"/>
                     <connections>
                         <outlet property="activeID" destination="gd9-2Q-vpy" id="awl-nP-V2J"/>
+                        <outlet property="batteryLabel" destination="lU3-cd-LUX" id="2M9-D5-UG7"/>
                         <outlet property="connectBtn" destination="Eof-sJ-jPG" id="Qt5-o2-pbj"/>
+                        <outlet property="connectLabel" destination="WnE-K4-t7X" id="QvB-JJ-5FF"/>
+                        <outlet property="heartLabel" destination="A1a-f8-Keh" id="4Mi-x8-kIL"/>
                         <outlet property="resultTextV" destination="Ph9-0c-DLX" id="OSU-O2-iyp"/>
                     </connections>
                 </viewController>
